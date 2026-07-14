@@ -36,7 +36,15 @@ public class Main {
                     }
                 }
             } else if (order.startsWith("삭제")) {
-
+                int ordernum = extract(order);
+                if(wises[ordernum-1] !=null){
+                    System.out.println(ordernum + "번 명언이 삭제되었습니다.");
+                    String key = wises[ordernum-1];
+                    words.remove(key);
+                    wises[ordernum-1] = null;
+                } else {
+                    System.out.println(ordernum+ "번 명언은 존재하지 않습니다.");
+                }
 
             } else if (order.startsWith("수정")) {
                 int ordernum = extract(order);
